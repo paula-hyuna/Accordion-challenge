@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Accordion Challenge</title>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>Using Iceboxfun</h2>
+
+        <!-- Accordion header 1 -->
+        <h3>
+            <button class="header" aria-expanded="false" aria-controls="panel1" id="header1">
+                <span>What is Iceboxfun?</span>
+                <span class="material-icons"> &#xe5cf</span>
+            </button>
+        </h3>
+
+        <!-- Accordion content 1 -->
+        <div aria-hidden="true" id="panel1" role="region" aria-labelledby="header1">
+            <p>
+                Iceboxfun is your entertainment hub; a media-streaming, subscription-based service offering users 
+                access to over millions of movies, books, music, and game titles.
+            </p>
+        </div>
+
+        <!-- Accordion header 2 -->
+        
+        <h3>
+            <button class="header" aria-expanded="false" aria-controls="panel2" id="header2">
+                <span>How do I use Iceboxfun</span>
+                <span class="material-icons">&#xe5cf</span>
+            </button>
+        </h3>
+        
+        <!-- Accordion content 2 -->
+        <div aria-hidden="true" id="panel2" role="region" aria-labelledby="header2">
+            <p>
+                With Iceboxfun, you have access to our different media players: the Movie Player,
+                Music Player, Books Reader, and the Game Launcher. All are easy to install and intuitive 
+                to use. For more info check our Technical Support section.
+            </p>
+        </div>
+
+        <!-- Accordion header 3 -->
+        <h3>
+            <button class="header" aria-expanded="false" aria-controls="panel3" id="header3">
+                <span>What devices can I use Iceboxfun on?</span>
+                <span class="material-icons">&#xe5cf</span>
+            </button>
+        </h3>
+            
+        <!-- Accordion content 3 -->
+        <div aria-hidden="true" id="panel3" role="region" aria-labelledby="header3">
+            <p>
+                You can use Iceboxfun on any iOS, Android mobile device, or desktop.
+            </p>
+        </div>
+
+         <!-- Accordion header 4 -->
+         <h3>
+            <button class="header" aria-expanded="false" aria-controls="panel4" id="header4">
+                <span>What devices can I use Iceboxfun on?</span>
+                <span class="material-icons">&#xe5cf</span>
+            </button>
+        </h3>
+                
+          <!-- Accordion content 4 -->
+        <div aria-hidden="true" id="panel4" role="region" aria-labelledby="header4">
+            <p>
+                As much as we'd love to provide all our users equal access to all the content hosted on Iceboxfun,
+                the reality is that it's the content providers and rights holders that define the streaming rights of their content. 
+                In most cases, streaming rights are defined by territory so someone in another country may very well see a different 
+                content library.
+            </p>
+        </div>
+    </div>
+</body>
+<script src="app.js"></script>
+</html>

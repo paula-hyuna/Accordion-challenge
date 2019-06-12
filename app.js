@@ -45,7 +45,7 @@ function showHideContent(event) {
 
             //display content belonging to clicked header
             if(contentSections[i].id == headerContent) {
-                
+
                 currentlyShowing = contentSections[i];
                 contentSections[i].setAttribute('aria-hidden', false);
                 header.setAttribute('aria-expanded', true);
@@ -57,7 +57,7 @@ function showHideContent(event) {
     }
     else {
 
-        //find clicked header's content
+        //find clicked header's content/
         for (let i = 0; i < contentSections.length; i++) {
 
             if(contentSections[i].getAttribute('id') === headerContent) {

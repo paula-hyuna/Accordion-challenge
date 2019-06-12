@@ -1,5 +1,6 @@
 const accordionHeader = document.getElementsByClassName('header');
 const contentSections = document.querySelectorAll('[role="region"]');
+let currentlyShowing = '';
 
 ////EVENT LISTENERS////
 
@@ -18,36 +19,41 @@ function showHideContent(event) {
     let expanded = header.getAttribute('aria-expanded');
     let headerContent = header.getAttribute('aria-controls');
     let buttonIcon = header.children[1];
+    
 
     if(expanded == 'false') {
         
         header.setAttribute('aria-expanded', 'true');
         
-        for(let i=0;i<contentSections.length; i++) {
-            
-                
-            //hide content from expanded headers and reset their attributes
-            contentSections[i].setAttribute('aria-hidden', true);
-            
+        if (currentlyShowing !== '') {
+            //hide content from expanded header and reset its attributes
+            currentlyShowing.setAttribute('aria-hidden', true);
+
+            //find corresponding content header and reset its attributes
             for(let x=0; x<accordionHeader.length; x++) {
 
-                if(contentSections[i].getAttribute('id') == accordionHeader[x].getAttribute('aria-controls')){
+                if(currentlyShowing.getAttribute('id') === accordionHeader[x].getAttribute('aria-controls')){
                     accordionHeader[x].setAttribute('aria-expanded', false);
                     accordionHeader[x].children[1].innerHTML = ' &#xe5cf';
                     break;
                 }
 
             }
-            
-            //clicked header should be shown
+        }
+        //find corresponding content for clicked header
+        for(let i=0; i < contentSections.length; i++) {
+
+            //display content belonging to clicked header
             if(contentSections[i].id == headerContent) {
                 
+                currentlyShowing = contentSections[i];
                 contentSections[i].setAttribute('aria-hidden', false);
                 header.setAttribute('aria-expanded', true);
                 buttonIcon.innerHTML = '&#xe5ce';
-
+    
             }
-        }
+        }    
+        
     }
     else {
 
@@ -59,6 +65,7 @@ function showHideContent(event) {
                 contentSections[i].setAttribute('aria-hidden', true);
                 header.setAttribute('aria-expanded', false);
                 buttonIcon.innerHTML = ' &#xe5cf';
+                currentlyShowing = '';
             }
 
         }
